@@ -1,0 +1,72 @@
+﻿DEFINE 
+---- MODEL MEASURES BEGIN ----
+MEASURE 'DAX Measures'[Average Customer Income] = 
+AVERAGE('DIM Customers'[Income]
+)
+MEASURE 'DAX Measures'[Average Recency] = 
+AVERAGEX('DIM Products', 'DIM Products'[Recency]
+)
+MEASURE 'DAX Measures'[Average Web Visits Month] = 
+AVERAGE('DIM Sales Channel'[Web Visits Month]
+)
+MEASURE 'DAX Measures'[Total Amount Sold] = 
+SUMX('DIM Products', 'DAX Measures'[Total Fish] + 'DAX Measures'[Total Fruits] + 'DAX Measures'[Total Gold] + 'DAX Measures'[Total Candies] + 'DAX Measures'[Total Meat] + 'DAX Measures'[Total Wines])
+MEASURE 'DAX Measures'[Total Campaign 1] = 
+SUM('Fact Campaigns'[Campaign 1]
+)
+MEASURE 'DAX Measures'[Total Campaign 2] = 
+SUM('Fact Campaigns'[Campaign 2]
+)
+MEASURE 'DAX Measures'[Total Campaign 3] = 
+SUM('Fact Campaigns'[Campaign 3]
+)
+MEASURE 'DAX Measures'[Total Campaign 4] = 
+SUM('Fact Campaigns'[Campaign 4]
+)
+MEASURE 'DAX Measures'[Total Campaign 5] = 
+SUM('Fact Campaigns'[Campaign 5]
+)
+MEASURE 'DAX Measures'[Total Candies] = 
+SUM('DIM Products'[Candies]
+)
+MEASURE 'DAX Measures'[Total Catalog Purchases] = 
+SUM('DIM Sales Channel'[Catalog Purchases]
+)
+MEASURE 'DAX Measures'[Total Complains] = 
+SUM('DIM Customers'[Complain]
+)
+MEASURE 'DAX Measures'[Total Customers] = 
+DISTINCTCOUNT('DIM Customers'[ID Customer]
+)
+MEASURE 'DAX Measures'[Total Deals Purchases] = 
+SUM('DIM Sales Channel'[Deals Purchases]
+)
+MEASURE 'DAX Measures'[Total Fish] = 
+SUM('DIM Products'[Fish]
+)
+MEASURE 'DAX Measures'[Total Fruits] = 
+SUM('DIM Products'[Fruits]
+)
+MEASURE 'DAX Measures'[Total Gold] = 
+SUM('DIM Products'[Gold]
+)
+MEASURE 'DAX Measures'[Total Last Campaign] = 
+SUM('Fact Campaigns'[Last Campaign]
+)
+MEASURE 'DAX Measures'[Total Meat] = 
+SUM('DIM Products'[Meat]
+)
+MEASURE 'DAX Measures'[Total Store Purchases] = 
+SUM('DIM Sales Channel'[Store Purchases]
+)
+MEASURE 'DAX Measures'[Total Web Purchases] = 
+SUM('DIM Sales Channel'[Web Purchases]
+)
+MEASURE 'DAX Measures'[Total Web Visits] = 
+SUM('DIM Sales Channel'[Web Visits Month]
+)
+MEASURE 'DAX Measures'[Total Wines] = 
+SUM('DIM Products'[Wines]
+)
+---- MODEL MEASURES END ----
+
